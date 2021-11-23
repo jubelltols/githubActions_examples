@@ -6,7 +6,7 @@
     "quot,es": ["error", "double"]
   },
   "env": {
-    "jest/globals": true
+    "jest": true
   }
 }
 
