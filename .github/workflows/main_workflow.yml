@@ -1,4 +1,4 @@
-name: GitHub Actions Node -> Hello World!!!
+name: main_workflow
 on:
   push:
     branches:
