@@ -17,4 +17,8 @@ jobs:
         JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
         VALIDATE_JAVASCRIPT_ES: true
       uses: github/super-linter@v4.8.4
-
+  test-execution:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout
+      run: npm install jest && npm run jest 
