@@ -17,15 +17,8 @@ jobs:
         JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
         VALIDATE_JAVASCRIPT_ES: true
       uses: github/super-linter@v4.8.4
-  test-execution:
-    needs: linter-execution
-    runs-on: ubuntu-latest
-    steps: 
-    - name: Checkout
-      uses: actions/checkout@v2.4.0
-    - run: npm install jest 
-    - run: npm run test 
   build:
+    needs: linter-execution
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -39,3 +32,12 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install
       - run: npm test
+  test-execution:
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+    - run: npm install jest 
+    - run: npm run test 
+
