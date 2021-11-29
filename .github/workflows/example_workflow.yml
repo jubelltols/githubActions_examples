@@ -19,6 +19,7 @@ jobs:
         name: react-app 
         path: build
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to salty-rainstorm.surge.sh
