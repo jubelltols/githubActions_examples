@@ -1,0 +1,30 @@
+name: example_workflow
+on:
+  push:
+    branches:
+    - nodejs_linter_job 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+      run: |
+        npm install
+        npm run build 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: react-app 
+        path: build
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to salty-rainstorm.surge.sh
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: 'salty-rainstorm.surge.sh'
+          project: '.'
+          login: ${{ secrets.SURGE_LOGIN }}
+          token: ${{ secrets.SURGE_TOKEN }}
+
