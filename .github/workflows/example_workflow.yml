@@ -2,7 +2,7 @@ name: example_workflow
 on:
   push:
     branches:
-    - nodejs_linter_job 
+    - react_app_deploy 
 jobs:
   build:
     runs-on: ubuntu-latest
