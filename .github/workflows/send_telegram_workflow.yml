@@ -1,0 +1,17 @@
+name: Telegram Bot
+on:
+  push:
+    branches:
+    - send_telegram_action 
+jobs:
+  envio_mensaje:
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+    - name: Telegram Bot
+      uses: ./.github/actions/send_telegram_action
+      with:
+        token: ${{ secrets.YOUR_TELEGRAM_BOT_TOKEN }}
+        id_chat: ${{ secrets.ID_CHAT }}
+        
