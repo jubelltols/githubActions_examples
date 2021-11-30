@@ -1,0 +1,12 @@
+name: "Teñegram Bot"
+description: "Telegram bot for Github Actions"
+inputs:
+  token: 
+    description: "token bot"
+    required: true 
+  id_chat: 
+    description: "id chat"
+    required: true 
+runs:
+  using: "node12"
+  main: 'index.js'
