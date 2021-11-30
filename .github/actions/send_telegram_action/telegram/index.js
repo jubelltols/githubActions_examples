@@ -11,7 +11,7 @@ const id_chat = core.getInput('id_chat');
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-bot.sendMessage(chatId, 'Received your message');
+bot.sendMessage(id_chat, 'Received your message');
 
 /* // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (id_chat, match) => {
