@@ -7,7 +7,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2.4.0
     - name: Hello World Action step
-      uses: ./../actions
+      uses: ./.github/actions/hello-world-javascript-action
       id: hello
       with:
         who-to-greet: "Mona the Octocat"
