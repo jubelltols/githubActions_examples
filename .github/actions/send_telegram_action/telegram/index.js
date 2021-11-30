@@ -11,7 +11,9 @@ const id_chat = core.getInput('id_chat');
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-// Matches "/echo [whatever]"
+bot.sendMessage(chatId, 'Received your message');
+
+/* // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (id_chat, match) => {
     // 'msg' is the received Message from Telegram
     // 'match' is the result of executing the regexp above on the text content
@@ -31,4 +33,4 @@ bot.on('message', (id_chat) => {
 
     // send a message to the chat acknowledging receipt of their message
     bot.sendMessage(chatId, 'Received your message');
-});
+}); */
