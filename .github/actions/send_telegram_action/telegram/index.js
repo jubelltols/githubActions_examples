@@ -7,11 +7,12 @@ const github = require("@actions/github");
 
 const token = core.getInput('token');
 const id_chat = core.getInput('id_chat');
+const nombre = core.getInput('nombre');
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-bot.sendMessage(id_chat, 'Received your message');
+bot.sendMessage(id_chat, 'Workflow ejecutado correctamente tras el último commit. Saludos '+nombre);
 
 /* // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (id_chat, match) => {
