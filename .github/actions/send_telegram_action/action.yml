@@ -7,6 +7,12 @@ inputs:
   id_chat: 
     description: "id chat"
     required: true 
+  nombre: 
+    description: "nombre"
+    required: true 
+outputs:
+  Mensaje_enviado: 
+    description: "Mensaje enviado"  
 runs:
   using: "node12"
   main: 'index.js'

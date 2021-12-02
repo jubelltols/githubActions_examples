@@ -14,4 +14,4 @@ jobs:
       with:
         token: ${{ secrets.YOUR_TELEGRAM_BOT_TOKEN }}
         id_chat: ${{ secrets.ID_CHAT }}
-        
+        nombre: juanmi
