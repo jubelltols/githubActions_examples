@@ -11,7 +11,7 @@ inputs:
     description: "nombre"
     required: true 
 outputs:
-  Mensaje_enviado: 
+  mensaje_enviado: 
     description: "Mensaje enviado"  
 runs:
   using: "node12"

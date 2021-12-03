@@ -17,4 +17,4 @@ jobs:
         id_chat: ${{ secrets.ID_CHAT }}
         nombre: ${{ secrets.NOMBRE }}
     - name: Send Message 
-      run: echo "${{steps.bot.outputs.Mensaje_enviado}}"
+      run: echo ${{ steps.bot.outputs.mensaje_enviado }}
