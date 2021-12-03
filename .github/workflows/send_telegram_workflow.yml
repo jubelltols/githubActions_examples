@@ -11,7 +11,10 @@ jobs:
       uses: actions/checkout@v2.4.0
     - name: Telegram Bot
       uses: ./.github/actions/send_telegram_action
+      id: bot
       with:
         token: ${{ secrets.YOUR_TELEGRAM_BOT_TOKEN }}
         id_chat: ${{ secrets.ID_CHAT }}
         nombre: ${{ secrets.NOMBRE }}
+    - name: Send Message 
+      run: echo "${{steps.bot.outputs.Mensaje_enviado}}"
