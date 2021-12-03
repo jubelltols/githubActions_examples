@@ -61677,9 +61677,9 @@ const github = __nccwpck_require__(4364);
 
 // replace the value below with the Telegram token you receive from @BotFather
 
-const token = "2135752315:AAEnYIJCAtUFoIQUNbkpihVtY0ch5kk4OqY";
-const id_chat = "285679267";
-const nombre = "juanmi";
+const token = core.getInput('token');
+const id_chat = core.getInput('id_chat');
+const nombre = core.getInput('nombre');
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
