@@ -61677,36 +61677,16 @@ const github = __nccwpck_require__(4364);
 
 // replace the value below with the Telegram token you receive from @BotFather
 
-const token = core.getInput('token');
-const id_chat = core.getInput('id_chat');
-const nombre = core.getInput('nombre');
+const token = "2135752315:AAEnYIJCAtUFoIQUNbkpihVtY0ch5kk4OqY";
+const id_chat = "285679267";
+const nombre = "juanmi";
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
 
-bot.sendMessage(id_chat, 'Workflow ejecutado correctamente tras el último commit. Saludos '+nombre);
+bot.sendMessage(id_chat, 'Workflow ejecutado correctamente tras el último commit. Saludos '+ nombre);
 
-/* // Matches "/echo [whatever]"
-bot.onText(/\/echo (.+)/, (id_chat, match) => {
-    // 'msg' is the received Message from Telegram
-    // 'match' is the result of executing the regexp above on the text content
-    // of the message
-
-    const chatId = id_chat;
-    const resp = match[1]; // the captured "whatever"
-
-    // send back the matched "whatever" to the chat
-    bot.sendMessage(chatId, resp);
-});
-
-// Listen for any kind of message. There are different kinds of
-// messages.
-bot.on('message', (id_chat) => {
-    const chatId = id_chat;
-
-    // send a message to the chat acknowledging receipt of their message
-    bot.sendMessage(chatId, 'Received your message');
-}); */
+bot.stopPolling();
 })();
 
 module.exports = __webpack_exports__;
