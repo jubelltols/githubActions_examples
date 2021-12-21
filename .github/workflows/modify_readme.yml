@@ -52,5 +52,12 @@ jobs:
         DESTINATION_PERSON: 2DAW
       with: 
         who-to-greet: ${{ env.DESTINATION_PERSON }} 
-
+  meme_action:
+    needs: test-execution
+    runs-on: ubuntu-latest
+    steps: 
+    - name: Checkout
+      uses: actions/checkout@v2.4.0
+    - name: Meme Generator
+      uses: ./.github/actions/meme_generator
 

@@ -1,0 +1,10 @@
+pipelane {
+    agent any
+    stages {
+        stage ('Hello world!'){
+            step {
+                echo "Hello world!"
+            }
+        }
+    }
+}
